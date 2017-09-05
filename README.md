@@ -9,9 +9,9 @@ I followed the guideline and made the car to drive in the center of the middle l
 spline is very helpful here, we used it to refine the way points, and trajectories
 generated is ok for the car to follow without exceed the acceleration and jerk.
  
-### Behavior prediction
-I didn't implement it for this project, since in this highway scenario the vehicles'
-behavior tend to be stable. For other scenarios, like urban this will be necessary.
+### Lane Scoring
+Each lane is evaluated by two facts, front car speed and distance to front car, if a lane with the highest score and the score is higher than a target score, it will be the target lane, the ego car will change lane one by one unitil the current lane is the target lane. If current lane also has a score that higher than the target score, the car will keep the current lane.
+
 
 ### Behavior planning
 I used a FSM which has following states: START, KEEP_LANE, PRE_LANE_CHANGE,
